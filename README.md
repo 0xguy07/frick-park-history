@@ -12,7 +12,7 @@ Next door: the [Swisshelm Park History Map](https://0xguy07.github.io/swisshelm-
 - **Historical photographs** (1891–2004), each placed at its estimated location. Public-domain and copyright-undetermined photos are shown on the map; photos still in copyright are marked with hollow dots and open at Historic Pittsburgh.
 - **Lost features**: the country club golf course, the 1901 and 1973 Fern Hollow bridges, the anti-aircraft battery, the slag heaps, and more.
 - **Today's trails and streams** from OpenStreetMap.
-- **Old map overlays**: 1904, 1951, 1960, and 1993 USGS topographic maps; G. M. Hopkins real estate plat maps from 1923 and 1939 (26 plate sections stitched together); and a 1938 aerial photograph, all georeferenced to today's streets.
+- **Old map overlays**: 1904, 1951, 1960, and 1993 USGS topographic maps; G. M. Hopkins real estate plat maps from 1923 and 1939 (19 plate sections stitched together); and a 1938 aerial photograph, all georeferenced to today's streets.
 - The illustrated **1939 Pictorial Map of Frick Park** by Ezra C. Stiles, in its own zoomable viewer (`pictorial-1939.html`).
 - A **timeline slider** to view the park as of any year.
 
