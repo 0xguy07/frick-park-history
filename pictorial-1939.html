@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pictorial Map of Frick Park (1939)</title>
+<meta name="description" content="Ezra C. Stiles's 1939 Pictorial Map of Frick Park, Pittsburgh, in a zoomable viewer. From the David Rumsey Map Collection.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<style>
+ :root{--bg:#f6f3ec;--fg:#222;--muted:#666;--line:#8884}
+ @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1c1b19;--fg:#eee;--muted:#aaa}}
+ :root[data-theme="dark"]{--bg:#1c1b19;--fg:#eee;--muted:#aaa}
+ html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);font:14px/1.4 system-ui,sans-serif}
+ #wrap{display:flex;flex-direction:column;height:100%} #map{flex:1;min-height:0;background:var(--bg)}
+ header{padding:8px 16px;border-bottom:1px solid var(--line)} h1{font-size:16px;margin:0} .muted{color:var(--muted);font-size:12px} a{color:inherit}
+</style></head><body><div id="wrap">
+<header><h1>Pictorial Map of Frick Park, 1939</h1>
+<div class="muted">Drawn by Ezra C. Stiles (1938) and published by the Union Trust Co., trustee of the Frick bequest, in March 1939. Shows the trails, shelters, nature museum, "future" tennis courts and parking, and the proposed Lincoln Highway (today's Parkway). It is an illustrated map, not drawn to a single scale, so it appears here as-is rather than laid over today's streets. Image: <a href="https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~274129~90047905" target="_blank">David Rumsey Map Collection</a>, David Rumsey Map Center, Stanford Libraries (CC BY-NC-SA 3.0). · <a href="./">Back to the Frick Park History Map</a></div></header>
+<div id="map"></div></div>
+<script>
+const W=3600,H=4937;
+const map=L.map('map',{crs:L.CRS.Simple,minZoom:-4,maxZoom:1,zoomSnap:.25,attributionControl:false});
+const b=[[0,0],[-H,W]];
+L.imageOverlay('assets/1939-pictorial-map-of-frick-park-stiles.webp',b).addTo(map);
+map.fitBounds(b); map.setMaxBounds(L.latLngBounds(b).pad(.2));
+</script></body></html>

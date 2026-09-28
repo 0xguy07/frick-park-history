@@ -35,8 +35,9 @@
   <div class="row"><label><input type="checkbox" id="cPhoto" checked> Photos</label><label><input type="checkbox" id="cEvent" checked> Events</label><label><input type="checkbox" id="cLost" checked> Lost features</label><label><input type="checkbox" id="cTrail"> Trails &amp; streams</label></div>
  </details>
  <details open><summary>Old map overlay</summary>
-  <div class="row"><select id="ov"><option value="">none</option><option value="t1904">1904 USGS topo</option><option value="a1938">1938 aerial photo</option><option value="t1951">1951 USGS topo</option><option value="t1960">1960 USGS topo</option><option value="t1993">1993 USGS topo</option></select></div>
+  <div class="row"><select id="ov"><option value="">none</option><option value="t1904">1904 USGS topo</option><option value="h1923">1923 Hopkins plat maps</option><option value="a1938">1938 aerial photo</option><option value="h1939">1939 Hopkins plat maps</option><option value="t1951">1951 USGS topo</option><option value="t1960">1960 USGS topo</option><option value="t1993">1993 USGS topo</option></select></div>
   <div class="row">Opacity <input id="op" type="range" min="0" max="100" value="55" style="flex:1"></div>
+  <div class="row muted">Plus: the illustrated <a href="pictorial-1939.html">1939 Pictorial Map of Frick Park</a> (opens its own viewer)</div>
  </details>
 </div>
 <div class="tabs"><button id="tE" class="on">Timeline</button><button id="tP">Photos</button><button id="tL">Lost features</button><button id="tT">Trails</button></div>
@@ -54,7 +55,7 @@ L.control.layers({'Streets':streets,'Satellite (today)':sat}).addTo(map);
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const hpUrl=id=>'https://historicpittsburgh.org/islandora/object/pitt:'+id;
 const TB=[[40.410,-79.928],[40.450,-79.886]];
-const OV={}; ['1904','1951','1960','1993'].forEach(y=>OV['t'+y]=L.imageOverlay('assets/overlay-'+y+'-usgs-topo.webp',TB,{opacity:.55})); OV.a1938=L.imageOverlay('assets/overlay-1938-aerial-pennpilot.webp',TB,{opacity:.55});
+const OV={}; ['1904','1951','1960','1993'].forEach(y=>OV['t'+y]=L.imageOverlay('assets/overlay-'+y+'-usgs-topo.webp',TB,{opacity:.55})); OV.a1938=L.imageOverlay('assets/overlay-1938-aerial-pennpilot.webp',TB,{opacity:.55}); OV.h1923=L.imageOverlay('assets/overlay-1923-hopkins-plats.webp',TB,{opacity:.55}); OV.h1939=L.imageOverlay('assets/overlay-1939-hopkins-plats.webp',TB,{opacity:.55});
 function setOv(){Object.values(OV).forEach(o=>map.removeLayer(o));const k=document.getElementById('ov').value;if(k){OV[k].setOpacity(document.getElementById('op').value/100).addTo(map);OV[k].bringToBack();}}
 const trailGroup=L.layerGroup(); const items=[];
 // spread markers that share a spot so each stays clickable
